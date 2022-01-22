@@ -64,8 +64,9 @@ const observer = new IntersectionObserver(entries => {
 
             const el = entry.target
             const id = el.getAttribute('id')
-            const text = el.getAttribute('id') == "text__one" ? text_one : text_two
-            printText(text, id)
+            const text = id == "text__one" ? text_one : text_two
+            printText(text, el)
+            observer.unobserve(el)
         }
     });
 });
