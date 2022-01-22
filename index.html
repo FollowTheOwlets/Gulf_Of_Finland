@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+
+    <!--Поддержка IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Адаптивная верстка -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Файл стилей -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Gulf of Finland</title>
+
+</head>
+
+<!--Отображаемое тело страницы-->
+
+<body class="body">
+    <!--Оболочка-->
+    <div class="wrapper">
+        <!--Шапка-->
+        <div class="header">
+            <div class="container">
+                <div class="header__row">
+                    <div class="header__menu myMenu">
+                        <div class="myMenu__name-and-icon">
+                            <div class="myMenu__icon icon-menu">
+                                <span><a href=""></a></span>
+                            </div>
+                            <h2 href="index.html" class="myMenu__name">Gulf of Finland</h2>
+                        </div>
+                        <nav class="myMenu__body" id="menu" style="right: -220px;">
+                            <ul class="myMenu__list">
+                                <li><a href="" class="myMenu__link">State page</a></li>
+                                <li> <a href="" class="myMenu__link">About</a></li>
+                                <li><a href="" class="myMenu__link">On map</a></li>
+                            </ul>
+                        </nav>
+                        <span class="myMenu__btn" onclick="menuShow()"><a class="myMenu__link" >Menu</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Страница-->
+        <div class="page">
+            <div class="container">
+                <div class="page__grid grid">
+                    <!--Фото вверхней части страницы-->
+                    <div class="grid__photo photo-preview">
+                        <img class="photo-preview__img" src="prev.jpg">
+                    </div>
+                    <!--Центральная часть страницы-->
+                    <div class="grid__center left">
+                        <!--Блок с текстом слева в центральной части-->
+                        <div class="grid__about about">
+                            <h3 class="about__title" id="text__one" onclick="printText(text_one,this)">Cultural Center</h3>
+                            <p class="about__paragraph">
+                                The Gulf of Finland is a great place for outdoor activities. Here you can meet a lone skier conquering the expanses of the snowy desert and active users of cheesecakes and sleds. The Gulf of Finland in winter is a place where you definitely need to go
+                                with your family.
+                            </p>
+                        </div>
+                        <!--Блок с фотографиями справа в центральной части-->
+                        <div class="grid__center__photo">
+                            <!--<img class="grid__center__photo__img" src="DSC_1019.png">-->
+                            <img class="grid__center__photo__img" src="DSC_1031.jpg">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="grid__center right">
+                        <!--Блок с фотографиями справа в центральной части-->
+                        <div class="grid__center__photo">
+                            <!--<img class="grid__center__photo__img" src="DSC_1019.png">-->
+                            <img class="grid__center__photo__img" src="DSC_1032.jpg">
+                        </div>
+                        <!--Блок с текстом слева в центральной части-->
+                        <div class="grid__about about">
+                            <h3 class="about__title" id="text__two" onclick="printText(text_two,this)">Parachutes on the Gulf</h3>
+                            <p class="about__paragraph">
+                                Speedriding - skiing with a wing over your head is a very young sport. Speedriding is shrouded in an attractive halo of a prohibited sport, although in fact there is no such ban: winged skiers are forbidden to show themselves only on prepared trails.
+                                And yet lifeguards at most ski resorts look askance at speedriders. After all, this type of skating is considered so dangerous that even base jumpers call its adherents crazy.
+                            </p>
+                        </div>
+                    </div>
+                    <!--Фотография перед нижней частью страницы-->
+                    <div class="grid__photo photo-footer">
+                        <img class="photo-footer__img" src="footer.jpg">
+                    </div>
+                    <!--Нижняя часть контента страницы-->
+                    <div class="grid__footer">
+                        <h3 class="grid__footer__title"></h3>
+                        <p class="grid__footer__paragraph"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Шапка-->
+        <div class="footer">
+            <div class="container">
+                <div class="footer__left">
+                    <p class="footer__left__paragraph">Powered by Fedorichev Lev</p>
+                </div>
+                <div class="footer__center">
+                    <a href="#" class="footer__center__up">▲ lets up</a>
+                </div>
+                <div class="footer__right">
+                    <p class="footer__right__paragraph">This site for my portfolio</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //Анимация мобильного меню
+        function menuShow() {
+            let start = Date.now();
+
+            let coor = document.getElementById('menu').style.right == "-220px" ? -220 : -20;
+            let k = coor == -220 ? 1 : -1;
+            let timer = setInterval(function() {
+
+                let timePassed = Date.now() - start;
+
+
+                if (timePassed >= 200) {
+                    if (k == -1) {
+                        document.getElementById('menu').style.right = "-220px"
+                    } else if (k == 1) {
+                        document.getElementById('menu').style.right = "-20px"
+                    }
+
+                    clearInterval(timer);
+                    return;
+                }
+
+                draw(timePassed, k, coor);
+
+            }, 20);
+        }
+
+        function draw(timePassed, k, coor) {
+            document.getElementById('menu').style.right = coor + k * timePassed / 0.9 + 'px';
+        }
+
+        //Анимация заголовков с текстом
+        let text_one = "Cultural Center";
+        let text_two = "Parachutes on the Gulf";
+
+        function printText(text, el) {
+            let newText = text[0] + "";
+            print(el, newText);
+
+            let timer = setInterval(function() {
+
+                newText += text[newText.length]
+
+                if (el.innerHTML == text) {
+                    clearInterval(timer);
+                    return;
+                }
+
+                print(el, newText);
+
+            }, 60);
+        }
+
+        function print(el, text) {
+            el.innerHTML = text;
+        }
+
+        //Отловщик показывается ли элемент
+        const observer2 = new IntersectionObserver(entries => {
+            // перебор записей
+            entries.forEach(entry => {
+                // если элемент появился
+                if (entry.isIntersecting) {
+                    printText(text_two, document.getElementById("text__two"))
+                }
+            });
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            // перебор записей
+            entries.forEach(entry => {
+                // если элемент появился
+                if (entry.isIntersecting) {
+                    printText(text_one, document.getElementById("text__one"))
+                }
+            });
+        });
+
+        observer2.observe(document.getElementById("text__two"));
+        observer.observe(document.getElementById("text__one"));
+    </script>
+</body>
+
+
+
+
+</html>

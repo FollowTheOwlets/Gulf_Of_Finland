@@ -1,0 +1,453 @@
+@font-face {
+    font-family: 'Exo 2';
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+    src: url(./fonts/7cH3v4okm5zmbtYtMeA0FKq0Jjg2drH0feC9hp8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/7cH3v4okm5zmbtYtMeA0FKq0Jjg2drF0feC9hp8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(./fonts/7cH1v4okm5zmbvwkAx_sfcEuiD8jYPWsOdC_.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+    src: url(./fonts/7cH3v4okm5zmbtYtMeA0FKq0Jjg2drH0euC9hp8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+a {
+    font-family: 'Exo 2';
+    font-style: italic;
+}
+
+p {
+    font-family: 'Exo 2';
+    font-weight: normal;
+    font-style: italic;
+    font-size: 18px;
+    margin: 0;
+}
+
+h3,
+h2 {
+    font-family: 'Exo 2';
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.body {
+    margin: 0;
+    background-color: #ecf5ff;
+}
+
+.container {
+    margin: 0px auto;
+    padding: 0px 100px;
+}
+
+.header,
+.footer {
+    background-color: rgb(15, 15, 15);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.footer {
+    padding: 10px 0px;
+}
+
+.myMenu__list {
+    margin: 0;
+    display: flex;
+}
+
+.myMenu__list li {
+    list-style-type: none;
+    padding-right: 73px;
+}
+
+.myMenu__link {
+    color: #fdf5ef;
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+    /*задаём высоту строки*/
+    text-decoration: none;
+    /*убираем подчёркивание*/
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.myMenu__icon {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0px;
+    display: inline;
+    border-radius: 100%;
+    background-image: url(./unnamed.jpg);
+    background-size: 100%;
+}
+
+.myMenu__name-and-icon {
+    display: inline-flex;
+    align-items: center;
+    color: #fdf5ef;
+}
+
+.myMenu__name {
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.grid__center,
+.myMenu__body {
+    display: flex;
+    align-items: center;
+}
+
+.myMenu__btn {
+    display: none;
+}
+
+.photo-preview__img,
+.photo-footer__img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 2s ease;
+    /* Safari and Chrome */
+    -moz-transition: 2s ease;
+    /* Firefox 4 */
+    -o-transition: 2s ease;
+    /* Opera */
+}
+
+.photo-preview,
+.photo-footer {
+    overflow: hidden;
+    max-height: 500px;
+    display: flex;
+    -webkit-transition: 1s ease;
+    /* Safari and Chrome */
+    -moz-transition: 1s ease;
+    /* Firefox 4 */
+    -o-transition: 1s ease;
+    /* Opera */
+}
+
+.photo-preview {
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 70px;
+}
+
+.photo-footer {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-height: 1000px;
+}
+
+.grid__center__photo {
+    overflow: hidden;
+    margin: 30px 15px;
+    max-height: 300px;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 100%;
+    -webkit-transition: 1s ease;
+    /* Safari and Chrome */
+    -moz-transition: 1s ease;
+    /* Firefox 4 */
+    -o-transition: 1s ease;
+    /* Opera */
+}
+
+.grid__center__photo__img {
+    height: 100%;
+    width: 100%;
+    -webkit-transition: 1s ease;
+    /* Safari and Chrome */
+    -moz-transition: 1s ease;
+    /* Firefox 4 */
+    -o-transition: 1s ease;
+    /* Opera */
+}
+
+.grid__center {
+    height: 400px;
+    background-color: #adc1d75d;
+    color: #161616
+}
+
+.grid__about.about {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0px 50px;
+}
+
+hr {
+    color: #1616168e;
+    /* Устанавливаем цвет линии */
+    background-color: #1616168e;
+    /* Для кроссбраузерности (Opera и Mozilla Firefox) */
+    height: 1px;
+    /* Задаем толщину */
+    border: none;
+    /* Отменяем отображение границы (в браузере Firefox) */
+    margin: 0;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #fdf5ef;
+}
+
+.footer__center__up {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fdf5ef;
+}
+
+@media (min-width:1200px) {
+    .myMenu__link:after {
+        display: block;
+        position: absolute;
+        left: 0;
+        /*изменить на right:0;, чтобы изменить направление подчёркивания */
+        width: 0;
+        /*задаём длинну линии до наведения курсора*/
+        height: 2px;
+        /*задаём ширину линии*/
+        background-color: #fdf5ef;
+        /*задаём цвет линии*/
+        content: "";
+        transition: width 0.3s ease-out;
+        /*задаём время анимации*/
+    }
+    .myMenu__link:hover:after,
+    .myMenu__link:focus:after {
+        width: 100%;
+        /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+    }
+    .photo-footer:hover {
+        max-height: 1200px;
+        transition: all 1s;
+    }
+    .photo-footer__img:hover {
+        width: 140%;
+        transition: all 1.5s;
+    }
+    .grid__center__photo__img:hover {
+        height: 120%;
+        width: 120%;
+        transition: all 1s;
+    }
+    .photo-preview {
+        animation: photo-preview__ani 1.5s 1 ease-in-out;
+        animation-fill-mode: forwards
+    }
+    @keyframes photo-preview__ani {
+        from {
+            max-height: 500px;
+        }
+        to {
+            max-height: 700px;
+        }
+    }
+    .photo-preview__img {
+        animation: photo-preview__img__ani 1.5s 1 ease-in-out;
+        animation-fill-mode: forwards
+    }
+    @keyframes photo-preview__img__ani {
+        from {
+            width: 100%;
+            margin-top: 0px;
+        }
+        to {
+            width: 200%;
+            margin-top: -200px;
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    .myMenu__body {
+        position: fixed;
+        background-color: #161616;
+    }
+    .myMenu__list {
+        flex-direction: column;
+        padding-top: 80px;
+    }
+    .myMenu__btn {
+        display: flex;
+        color: #f3f3f3;
+        align-items: center;
+    }
+    .myMenu__btn a {
+        text-decoration: none;
+    }
+    .myMenu__btn a {
+        font-style: normal;
+        font-size: 20px;
+    }
+    .myMenu__list .myMenu__link {
+        line-height: 3;
+        font-weight: lighter;
+    }
+    .myMenu__body {
+        align-items: flex-start;
+    }
+    .header__menu {
+        align-items: stretch;
+    }
+}
+
+@media (max-width:940px) {
+    p {
+        font-size: 13px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    .grid__center__photo {
+        width: 400px;
+    }
+    .grid__center {
+        height: 300px;
+    }
+    .container {
+        padding: 0px 20px;
+    }
+    .myMenu__btn {
+        padding-right: 80px;
+    }
+}
+
+@media (max-width:580px) {
+    p {
+        font-size: 13px;
+    }
+    h3,
+    a,
+    h2 {
+        font-size: 15px !important;
+    }
+    .grid__center__photo {
+        max-width: 250px;
+        max-height: 250px;
+    }
+    .grid__center {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        height: 450px;
+    }
+    .grid__center.right {
+        padding-bottom: 20px;
+        height: 530px;
+    }
+    .container {
+        padding: 0px 20px;
+    }
+    .grid__center {
+        flex-direction: column;
+    }
+    .photo-preview__img,
+    .photo-footer__img {
+        width: 200%;
+    }
+    .myMenu__list li {
+        padding-right: 40px;
+    }
+    .myMenu__btn {
+        padding-right: 30px;
+    }
+    .myMenu__list {
+        padding-top: 40px;
+        padding-left: 15px
+    }
+    .grid__about.about {
+        align-items: center;
+    }
+    .footer p {
+        font-size: 8px;
+    }
+    .footer a {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width:320px) {
+    .grid__center__photo {
+        max-width: 170px;
+    }
+}
+
+
+/*Для поодержки меню в браузерах без webkit*/
+
+@media (max-height:2000px) {
+    .myMenu__body {
+        height: 2000px;
+        height: -webkit-fill-available;
+    }
+}
+
+@media (max-height:1500px) {
+    .myMenu__body {
+        height: 1500px;
+        height: -webkit-fill-available;
+    }
+}
+
+@media (max-height:1000px) {
+    .myMenu__body {
+        height: 1000px;
+        height: -webkit-fill-available;
+    }
+}
+
+@media (max-height:500px) {
+    .myMenu__body {
+        height: 500px;
+        height: -webkit-fill-available;
+    }
+}
