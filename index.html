@@ -26,6 +26,11 @@
 <!--Отображаемое тело страницы-->
 
 <body class="body">
+    <!-- Наблюдатели для действий -->
+    <script>
+        observer.observe(document.getElementById("text__two"));
+        observer.observe(document.getElementById("text__one"));
+    </script>
     <!--Оболочка-->
     <div class="wrapper">
         <!--Шапка-->
@@ -63,7 +68,7 @@
                     <div class="grid__center left">
                         <!--Блок с текстом слева в центральной части-->
                         <div class="grid__about about">
-                            <h3 class="about__title" id="text__one" onclick="printText(text_one,this)">Cultural Center</h3>
+                            <h3 class="about__title" id="text__one"></h3>
                             <p class="about__paragraph">
                                 The Gulf of Finland is a great place for outdoor activities. Here you can meet a lone skier conquering the expanses of the snowy desert and active users of cheesecakes and sleds. The Gulf of Finland in winter is a place where you definitely need to go
                                 with your family.
@@ -84,7 +89,7 @@
                         </div>
                         <!--Блок с текстом слева в центральной части-->
                         <div class="grid__about about">
-                            <h3 class="about__title" id="text__two" onclick="printText(text_two,this)">Parachutes on the Gulf</h3>
+                            <h3 class="about__title" id="text__two"></h3>
                             <p class="about__paragraph">
                                 Speedriding - skiing with a wing over your head is a very young sport. Speedriding is shrouded in an attractive halo of a prohibited sport, although in fact there is no such ban: winged skiers are forbidden to show themselves only on prepared trails.
                                 And yet lifeguards at most ski resorts look askance at speedriders. After all, this type of skating is considered so dangerous that even base jumpers call its adherents crazy.
