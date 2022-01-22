@@ -56,25 +56,16 @@ function print(el, text) {
 }
 
 //Отловщик показывается ли элемент
-const observer2 = new IntersectionObserver(entries => {
-    // перебор записей
-    entries.forEach(entry => {
-        // если элемент появился
-        if (entry.isIntersecting) {
-            printText(text_two, document.getElementById("text__two"))
-        }
-    });
-});
-
 const observer = new IntersectionObserver(entries => {
     // перебор записей
     entries.forEach(entry => {
         // если элемент появился
         if (entry.isIntersecting) {
-            printText(text_one, document.getElementById("text__one"))
+
+            const el = entry.target
+            const id = el.getAttribute('id')
+            const text = el.getAttribute('id') == "text__one" ? text_one : text_two
+            printText(text, id)
         }
     });
 });
-
-observer2.observe(document.getElementById("text__two"));
-observer.observe(document.getElementById("text__one"));
